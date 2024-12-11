@@ -85,7 +85,6 @@ udpsink host=203.234.58.157 port=8002 sync=false";
 		if(mode) dxl.setVelocity(lvel, rvel);
 
 		if (ctrl_c_pressed) break;
-		//usleep(20 * 1000);
 		tm.stop();
 		cout<<"error : "<<getErr(frame, cen, GAIN) <<" lvel : " << lvel <<" rvel : " << rvel <<" time : " <<tm.getTimeSec() << "Sec"<<endl;
 	}
