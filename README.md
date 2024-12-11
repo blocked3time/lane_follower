@@ -97,8 +97,7 @@ drawBoundingBox와 drawCenter를 통하여 바운딩 박스와 무게 중심을 
 
 ![image](https://github.com/user-attachments/assets/d525de27-0e71-445a-91d9-fbe65854fcd9)
 
-
-
+VideoWriter 객체를 통해 전처리한 frame을 pc로 전송 후 각 vel값을 부여한다 (rvel같은 경우 모터가 반대로 달려있음으로 -1을 곱해줌) 's'를 눌러 mode가 true인 경우 모터를 동작시킨
 
 
 
