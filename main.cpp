@@ -5,7 +5,7 @@
 #include "opencv2/opencv.hpp"
 #include "dxl.hpp"
 #define MINDISTANCE 100
-#define RPM 100
+#define RPM 200
 using namespace std;
 using namespace cv;
 double GAIN =0.25;
