@@ -93,7 +93,10 @@ connectedComponentsWithStats 함수를 사용하여 인식되 객체의 정보�
 
 findMinIndex함수를 통하여 인식한 각 객체의 인식된 객체의 인덱스 값을 구한고 포인트 객체의 위치를 업데이트 한다 (라인이 2개이니 두 번 호출한다)
 getCenterPoint 함수를 사용하여 업데이트 된 객체의 좌표를 조합하여 따라가고 있는 포인트 객체의 값을 설정한다.
-drawBoundingBox
+drawBoundingBox와 drawCenter를 통하여 바운딩 박스와 무게 중심을 표시해준다
+
+![image](https://github.com/user-attachments/assets/d525de27-0e71-445a-91d9-fbe65854fcd9)
+
 
 
 
