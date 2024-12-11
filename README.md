@@ -76,7 +76,7 @@ double getErr(Mat frame, Point po,double gain)
 
 ![image](https://github.com/user-attachments/assets/25e2ebe8-f4a5-4c59-a8fa-59a42e89b709)
 
-시간 측정을 위한 TickMeter객체 리셋 및 스타트, kbhit을 통해 키보드 눌림을 감지한다(엔터를 누르징 않아도 입력 받아짐)
+시간 측정을 위한 TickMeter객체 리셋 및 스타트, kbhit을 통해 키보드 눌림을 감지한다(엔터를 누르지 않아도 입력 받아짐)
 's'누를시 mode가 true로 바뀌며 모터가 동작하고 'q'를 누르면 코드가 멈춘다
 
 
