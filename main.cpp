@@ -4,11 +4,11 @@
 #include "vision.hpp"  
 #include "opencv2/opencv.hpp"
 #include "dxl.hpp"
-#define MINDISTANCE 100
+#define MINDISTANCE 125
 #define RPM 200
 using namespace std;
 using namespace cv;
-double GAIN =0.25;
+double GAIN =0.37;
 bool ctrl_c_pressed;
 void ctrlc(int)
 {
@@ -28,16 +28,9 @@ videoconvert ! video/x-raw, format=(string)BGR ! appsink";
 
 	Dxl dxl;
 	if (!dxl.open()) { cout << "dxl open error" << endl; return -1; }
-    //VideoCapture source("5_lt_cw_100rpm_out.mp4");
-	//VideoCapture source("lanefollow_100rpm_ccw.mp4");
+
 	if (!source.isOpened()) { cout << "Camera error" << endl; return -1; }
-	/*VideoWriter vw("output.mp4", VideoWriter::fourcc('X', '2', '6', '4'), 30, Size(640, 360), true);
-	if (!vw.isOpened())
-	{
-		std::cout << "Can't write video !!! check setting" << std::endl;
-		return -1;
-	}
-	*/
+
 	string dst1 = "appsrc ! videoconvert ! video/x-raw, format=BGRx ! \
 nvvidconv ! nvv4l2h264enc insert-sps-pps=true ! \
 h264parse ! rtph264pay pt=96 ! \
@@ -86,7 +79,7 @@ udpsink host=203.234.58.157 port=8002 sync=false";
 		drawBoundingBox(frame,stats,centroids, lable, index1,index2,po1,po2);
 		drawCenter(frame, cen);
 		writer1 <<frame; 
-
+		if(po1 == po2) break;
 		lvel = RPM - getErr(frame, cen, GAIN);
 		rvel = RPM*-1 - getErr(frame, cen, GAIN);
 		if(mode) dxl.setVelocity(lvel, rvel);
