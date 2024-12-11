@@ -97,7 +97,21 @@ drawBoundingBox와 drawCenter를 통하여 바운딩 박스와 무게 중심을 
 
 ![image](https://github.com/user-attachments/assets/d525de27-0e71-445a-91d9-fbe65854fcd9)
 
-VideoWriter 객체를 통해 전처리한 frame을 pc로 전송 후 각 vel값을 부여한다 (rvel같은 경우 모터가 반대로 달려있음으로 -1을 곱해줌) 's'를 눌러 mode가 true인 경우 모터를 동작시킨
+VideoWriter 객체를 통해 전처리한 frame을 pc로 전송 후 각 vel값을 부여한다 (rvel같은 경우 모터가 반대로 달려있음으로 -1을 곱해줌) 's'를 눌러 mode가 true인 경우 모터를 동작시킨다.
+po1과 po2의 값이 같은 경우 (같은 차선을 서로 인식한 경우) 오류로 판단하여 코드를 멈춘다
 
+![image](https://github.com/user-attachments/assets/95ff668d-cf2d-46ca-8e5a-243bee933117)
+
+컨트롤 + c를 누른 경우 코드를 멈춤 , TickMeter의 시간 측정을 멈추고 에러값 lvel,rvel, 측정한 시간을 출력한다
+
+
+
+![image](https://github.com/user-attachments/assets/578e905c-a085-466e-a37f-eedbd510c8fc)
+
+while문이 끝난 경우 dxl,close()해준 후 종료한다.(하지 않으면 모터는 계속회전함)
+
+메이크 파일
+
+![image](https://github.com/user-attachments/assets/a7e5534d-99e8-46d2-be14-b579da9001e6)
 
 
